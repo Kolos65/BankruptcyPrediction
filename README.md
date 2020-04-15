@@ -1,3 +1,5 @@
+Foltányi Kolos
+
 
 # Csődelőrejelzés Többáltozós Statisztikai Módszerekkel
 A csődelőrejelzés alapvető célja csődvalószínűség, illetve fizetőképességet kifejező score becslése az egyes megfigyelésekhez a magyarázó változók (pénzügyi mutatók) és a csődeseményt kifejező bináris célváltozó felhasználásával.
@@ -646,7 +648,7 @@ def calcKESZLET_FORG_SEB(data):
 
 
 ```python
-def calcESZK_FORG_SEB(data):
+def calcVEVO_FORG_SEB(data):
     result = []
     for index, row in data.iterrows():
         numer = row['Arbevetel']
@@ -1026,7 +1028,7 @@ factory = {
     'ARBEV_ARANYOS_EBITDA': calcARBEV_ARANYOS_EBITDA,
     'ESZK_ARANYOS_ARBEV': calcESZK_ARANYOS_ARBEV,
     'KESZLET_FORG_SEB': calcKESZLET_FORG_SEB,
-    'ESZK_FORG_SEB': calcESZK_FORG_SEB,
+    'VEVO_FORG_SEB': calcVEVO_FORG_SEB,
     'LIKVID_RATA': calcLIKVID_RATA,
     'LIKVID_GYORSRATA': calcLIKVID_GYORSRATA,
     'KESZPENZ_LIKVID': calcKESZPENZ_LIKVID,
@@ -1063,7 +1065,7 @@ for key in factory:
     ARBEV_ARANYOS_EBITDA ['Nem kellet imputálni']
     ESZK_ARANYOS_ARBEV ['Nem kellet imputálni']
     KESZLET_FORG_SEB ['Maximum Imputálva: 444 ']
-    ESZK_FORG_SEB ['Maximum Imputálva: 19 ']
+    VEVO_FORG_SEB ['Maximum Imputálva: 19 ']
     LIKVID_RATA ['Maximum Imputálva: 2 ']
     LIKVID_GYORSRATA ['Maximum Imputálva: 2 ']
     KESZPENZ_LIKVID ['Maximum Imputálva: 2 ']
@@ -1182,7 +1184,7 @@ database.iloc[:,6:11].head()
     <tr style="text-align: right;">
       <th></th>
       <th>KESZLET_FORG_SEB</th>
-      <th>ESZK_FORG_SEB</th>
+      <th>VEVO_FORG_SEB</th>
       <th>LIKVID_RATA</th>
       <th>LIKVID_GYORSRATA</th>
       <th>KESZPENZ_LIKVID</th>
