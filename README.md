@@ -420,7 +420,7 @@ summary.loc['std',:].plot.bar(ax=axes[1], title='Szórás');
 ```
 
 
-![png](Bankruptcy_files/Bankruptcy_5_0.png)
+![png](Figures/Bankruptcy_5_0.png)
 
 
 ## 2. Pénzügyi mutató input változók megképzése
@@ -1155,7 +1155,7 @@ df.plot.bar(rot=0);
 ```
 
 
-![png](Bankruptcy_files/Bankruptcy_76_0.png)
+![png](Figures/Bankruptcy_76_0.png)
 
 
 Látható, hogy a legtöbb csődesemény oka a felszámolási eljárás. Az eseményeket bináris változóvá transzfromálva ki tudjuk egészíteni az adatbázisunkat a fizetőképességet indikáló célváltozóval:
@@ -1252,7 +1252,7 @@ plt.plot(vals);
 ```
 
 
-![png](Bankruptcy_files/Bankruptcy_81_0.png)
+![png](Figures/Bankruptcy_81_0.png)
 
 
 Az árbevételarányos nyereség pédáján jól látszik a csonkolás eredménye. A narancssárga szín jelzi az alsó 5% percentilis csonkolásából keletkezett adatokat. A kiugró értékek eltávolításával egy jóval reprezentatívabb adatsort nyerünk, mely alkalmasabb lesz a későbbiekben modellek készítésére.
