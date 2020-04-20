@@ -12,7 +12,7 @@ Az adatgyűjtés tárgya a modell alkalmazásához várható célportfolióra re
 **4. Bináris célváltozó (1/0 csődesemény) megképzése** <br>
 **5. Outlier értékek azonosítása és csonkolással történő kezelése**
 
-A kiinduló adatbázist a `database.xlsx` file-ból olvassuk be egy `rawdata` nevű dataframe-be.
+A kiinduló adatbázist a `rawdata.xlsx` file-ból olvassuk be egy `rawdata` nevű dataframe-be.
 
 
 ```python
@@ -22,7 +22,7 @@ import numpy as np
 import pandas as pd
 import math
 
-rawdata = pd.read_excel('database.xlsx').fillna(0)
+rawdata = pd.read_excel('rawdata.xlsx').fillna(0)
 
 rawdata.head()
 ```
@@ -1272,9 +1272,9 @@ def truncateDatabase():
 truncateDatabase()
 ```
 
-Az outlier értékek kezelésével létrejött a végleges adatbázis, melyet a továbbiakban fel tudunk használni csődvalószínűség, illetve fizetőképességet kifejező score becslésére. A végleges táblát a `result.xslx` nevű állományba mentjük.
+Az outlier értékek kezelésével létrejött a végleges adatbázis, melyet a továbbiakban fel tudunk használni csődvalószínűség, illetve fizetőképességet kifejező score becslésére. A végleges táblát a `database.xslx` nevű állományba mentjük.
 
 
 ```python
-database.to_excel("result.xlsx")
+database.to_excel("database.xlsx")
 ```
