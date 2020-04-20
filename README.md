@@ -1,3 +1,5 @@
+Foltányi Kolos
+
 
 # Csődelőrejelzés Többáltozós Statisztikai Módszerekkel
 A csődelőrejelzés alapvető célja csődvalószínűség, illetve fizetőképességet kifejező score becslése az egyes megfigyelésekhez a magyarázó változók (pénzügyi mutatók) és a csődeseményt kifejező bináris célváltozó felhasználásával.
@@ -194,7 +196,7 @@ summary = rawdata.describe().iloc[:,1:20]
 
 pd.options.display.float_format = '{:.2f}'.format
 
-summary.iloc[:,0:7]
+summary
 ```
 
 
@@ -211,11 +213,35 @@ summary.iloc[:,0:7]
       <th>UzemiUzletiTevEred</th>
       <th>ErtekcsokkLeir</th>
       <th>TargyiEszk</th>
+      <th>BefEszk</th>
+      <th>PenzEszk</th>
+      <th>Ertekpapirok</th>
+      <th>ForgoEszk</th>
+      <th>Keszletek</th>
+      <th>KovetelesekVevok</th>
+      <th>KovetelesekSzallitok</th>
+      <th>RovidLejKot</th>
+      <th>HosszuLejKot</th>
+      <th>ElozoMerlegFoosszeg</th>
+      <th>ElozoSajatToke</th>
+      <th>ElozoArbevetel</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>count</th>
+      <td>1000.00</td>
+      <td>1000.00</td>
+      <td>1000.00</td>
+      <td>1000.00</td>
+      <td>1000.00</td>
+      <td>1000.00</td>
+      <td>1000.00</td>
+      <td>1000.00</td>
+      <td>1000.00</td>
+      <td>1000.00</td>
+      <td>1000.00</td>
+      <td>1000.00</td>
       <td>1000.00</td>
       <td>1000.00</td>
       <td>1000.00</td>
@@ -233,6 +259,18 @@ summary.iloc[:,0:7]
       <td>-56471.08</td>
       <td>16982.99</td>
       <td>169319.25</td>
+      <td>187828.49</td>
+      <td>22897.22</td>
+      <td>2599.66</td>
+      <td>261255.10</td>
+      <td>46359.61</td>
+      <td>189400.07</td>
+      <td>211775.94</td>
+      <td>125440.02</td>
+      <td>70075.88</td>
+      <td>462583.20</td>
+      <td>261959.49</td>
+      <td>394492.35</td>
     </tr>
     <tr>
       <th>std</th>
@@ -243,6 +281,18 @@ summary.iloc[:,0:7]
       <td>2763547.25</td>
       <td>203963.54</td>
       <td>1166287.50</td>
+      <td>1194236.26</td>
+      <td>85084.29</td>
+      <td>32098.75</td>
+      <td>3158575.80</td>
+      <td>435026.79</td>
+      <td>2997634.61</td>
+      <td>1194094.57</td>
+      <td>635485.94</td>
+      <td>682586.36</td>
+      <td>4812501.83</td>
+      <td>4456089.54</td>
+      <td>3497749.68</td>
     </tr>
     <tr>
       <th>min</th>
@@ -252,6 +302,18 @@ summary.iloc[:,0:7]
       <td>-83875550.00</td>
       <td>-85231763.00</td>
       <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>29.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>0.00</td>
+      <td>-275789.00</td>
       <td>0.00</td>
     </tr>
     <tr>
@@ -263,6 +325,18 @@ summary.iloc[:,0:7]
       <td>345.25</td>
       <td>288.75</td>
       <td>902.25</td>
+      <td>1163.50</td>
+      <td>1287.00</td>
+      <td>0.00</td>
+      <td>12686.50</td>
+      <td>0.00</td>
+      <td>3001.00</td>
+      <td>9644.25</td>
+      <td>7295.25</td>
+      <td>0.00</td>
+      <td>15303.75</td>
+      <td>3443.00</td>
+      <td>20797.00</td>
     </tr>
     <tr>
       <th>50%</th>
@@ -273,6 +347,18 @@ summary.iloc[:,0:7]
       <td>3029.50</td>
       <td>1157.00</td>
       <td>6188.50</td>
+      <td>7786.00</td>
+      <td>4961.50</td>
+      <td>0.00</td>
+      <td>26047.50</td>
+      <td>447.00</td>
+      <td>11120.50</td>
+      <td>22635.00</td>
+      <td>17676.00</td>
+      <td>0.00</td>
+      <td>36411.00</td>
+      <td>11095.00</td>
+      <td>48124.50</td>
     </tr>
     <tr>
       <th>75%</th>
@@ -283,6 +369,18 @@ summary.iloc[:,0:7]
       <td>11259.00</td>
       <td>3623.75</td>
       <td>35919.75</td>
+      <td>43812.50</td>
+      <td>13096.25</td>
+      <td>0.00</td>
+      <td>65847.50</td>
+      <td>8859.25</td>
+      <td>31697.50</td>
+      <td>78555.25</td>
+      <td>57933.50</td>
+      <td>4415.00</td>
+      <td>113466.50</td>
+      <td>40399.00</td>
+      <td>136602.25</td>
     </tr>
     <tr>
       <th>max</th>
@@ -293,107 +391,6 @@ summary.iloc[:,0:7]
       <td>18636439.00</td>
       <td>6008926.00</td>
       <td>22458472.00</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-
-
-
-```python
-summary.iloc[:,7:14]
-```
-
-
-
-
-<div>
-<table class="dataframe">  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>BefEszk</th>
-      <th>PenzEszk</th>
-      <th>Ertekpapirok</th>
-      <th>ForgoEszk</th>
-      <th>Keszletek</th>
-      <th>KovetelesekVevok</th>
-      <th>KovetelesekSzallitok</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>count</th>
-      <td>1000.00</td>
-      <td>1000.00</td>
-      <td>1000.00</td>
-      <td>1000.00</td>
-      <td>1000.00</td>
-      <td>1000.00</td>
-      <td>1000.00</td>
-    </tr>
-    <tr>
-      <th>mean</th>
-      <td>187828.49</td>
-      <td>22897.22</td>
-      <td>2599.66</td>
-      <td>261255.10</td>
-      <td>46359.61</td>
-      <td>189400.07</td>
-      <td>211775.94</td>
-    </tr>
-    <tr>
-      <th>std</th>
-      <td>1194236.26</td>
-      <td>85084.29</td>
-      <td>32098.75</td>
-      <td>3158575.80</td>
-      <td>435026.79</td>
-      <td>2997634.61</td>
-      <td>1194094.57</td>
-    </tr>
-    <tr>
-      <th>min</th>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>29.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <th>25%</th>
-      <td>1163.50</td>
-      <td>1287.00</td>
-      <td>0.00</td>
-      <td>12686.50</td>
-      <td>0.00</td>
-      <td>3001.00</td>
-      <td>9644.25</td>
-    </tr>
-    <tr>
-      <th>50%</th>
-      <td>7786.00</td>
-      <td>4961.50</td>
-      <td>0.00</td>
-      <td>26047.50</td>
-      <td>447.00</td>
-      <td>11120.50</td>
-      <td>22635.00</td>
-    </tr>
-    <tr>
-      <th>75%</th>
-      <td>43812.50</td>
-      <td>13096.25</td>
-      <td>0.00</td>
-      <td>65847.50</td>
-      <td>8859.25</td>
-      <td>31697.50</td>
-      <td>78555.25</td>
-    </tr>
-    <tr>
-      <th>max</th>
       <td>23313842.00</td>
       <td>1115466.00</td>
       <td>822580.00</td>
@@ -401,91 +398,6 @@ summary.iloc[:,7:14]
       <td>9219831.00</td>
       <td>84194336.00</td>
       <td>22801319.00</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-
-
-
-```python
-summary.iloc[:,14:]
-```
-
-
-
-
-<div>
-<table class="dataframe">  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>RovidLejKot</th>
-      <th>HosszuLejKot</th>
-      <th>ElozoMerlegFoosszeg</th>
-      <th>ElozoSajatToke</th>
-      <th>ElozoArbevetel</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>count</th>
-      <td>1000.00</td>
-      <td>1000.00</td>
-      <td>1000.00</td>
-      <td>1000.00</td>
-      <td>1000.00</td>
-    </tr>
-    <tr>
-      <th>mean</th>
-      <td>125440.02</td>
-      <td>70075.88</td>
-      <td>462583.20</td>
-      <td>261959.49</td>
-      <td>394492.35</td>
-    </tr>
-    <tr>
-      <th>std</th>
-      <td>635485.94</td>
-      <td>682586.36</td>
-      <td>4812501.83</td>
-      <td>4456089.54</td>
-      <td>3497749.68</td>
-    </tr>
-    <tr>
-      <th>min</th>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>0.00</td>
-      <td>-275789.00</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <th>25%</th>
-      <td>7295.25</td>
-      <td>0.00</td>
-      <td>15303.75</td>
-      <td>3443.00</td>
-      <td>20797.00</td>
-    </tr>
-    <tr>
-      <th>50%</th>
-      <td>17676.00</td>
-      <td>0.00</td>
-      <td>36411.00</td>
-      <td>11095.00</td>
-      <td>48124.50</td>
-    </tr>
-    <tr>
-      <th>75%</th>
-      <td>57933.50</td>
-      <td>4415.00</td>
-      <td>113466.50</td>
-      <td>40399.00</td>
-      <td>136602.25</td>
-    </tr>
-    <tr>
-      <th>max</th>
       <td>12924803.00</td>
       <td>18834823.00</td>
       <td>137975662.00</td>
@@ -500,20 +412,15 @@ summary.iloc[:,14:]
 
 
 ```python
-summary.loc['mean',:].plot.bar(title='Átlag');
+fig, axes = plt.subplots(ncols=2, figsize=(15, 6))
+
+summary.loc['mean',:].plot.bar(ax=axes[0], title='Átlag')
+
+summary.loc['std',:].plot.bar(ax=axes[1], title='Szórás');
 ```
 
 
-![png](Figures/Bankruptcy_7_0.png)
-
-
-
-```python
-summary.loc['std',:].plot.bar(title='Szórás');
-```
-
-
-![png](Figures/Bankruptcy_8_0.png)
+![png](Bankruptcy_files/Bankruptcy_5_0.png)
 
 
 ## 2. Pénzügyi mutató input változók megképzése
@@ -995,21 +902,6 @@ def applyImputations(arr):
             yield methods[x](nums)
         else:
             yield x
-            
-def imputationStats(record):
-    minc = len([x for x in record if x == MIN_IMPUT])
-    maxc = len([x for x in record if x == MAX_IMPUT])
-    medc = len([x for x in record if x == MEDIAN_IMPUT])
-    description = []
-    if minc > 0:
-        description.append(f"Minimum Imputálva: {minc} ")
-    if maxc > 0:
-        description.append(f"Maximum Imputálva: {maxc} ")
-    if medc > 0:
-        description.append(f"Medián Imputálva: {medc} ")
-    if minc == 0 and maxc == 0 and medc == 0:
-        description.append("Nem kellet imputálni")    
-    return description
 ```
 
 Nincs más hátra mint előre! A fenti függvény segítségével elkészíthető a végelges data frame, mely az imputációs eljárásokkal generált pénzügyi mutatószámokat tárolja.
@@ -1053,47 +945,13 @@ factory = {
 for key in factory:
     record = factory[key](rawdata)
     database[key] = [x for x in applyImputations(record)]
-    print(key, imputationStats(record))
 ```
-
-    ROE ['Minimum Imputálva: 73 ']
-    ROA ['Nem kellet imputálni']
-    EBITDA ['Nem kellet imputálni']
-    ROS ['Nem kellet imputálni']
-    ARBEV_ARANYOS_EBITDA ['Nem kellet imputálni']
-    ESZK_ARANYOS_ARBEV ['Nem kellet imputálni']
-    KESZLET_FORG_SEB ['Maximum Imputálva: 444 ']
-    VEVO_FORG_SEB ['Maximum Imputálva: 19 ']
-    LIKVID_RATA ['Maximum Imputálva: 2 ']
-    LIKVID_GYORSRATA ['Maximum Imputálva: 2 ']
-    KESZPENZ_LIKVID ['Maximum Imputálva: 2 ']
-    DINAMIKUS_LIKVID ['Maximum Imputálva: 2 ']
-    SAJAT_VAGYON_ARANYA ['Nem kellet imputálni']
-    ELADOS_MERTEKE ['Nem kellet imputálni']
-    HOSSZU_TAVU_ELADOS ['Maximum Imputálva: 91 ']
-    IDEGEN_SAJAT_TOKE_ARANY ['Maximum Imputálva: 117 ']
-    BEFESZK_SAJAT_FIN ['Minimum Imputálva: 15 ', 'Medián Imputálva: 65 ']
-    BEFESZK_IDEGEN_FIN ['Maximum Imputálva: 80 ']
-    DIN_JOVED_RATA ['Nem kellet imputálni']
-    CASH_FLOW_TART_RATA ['Minimum Imputálva: 1 ']
-    CASH_FLOW_ARBEV_RATA ['Nem kellet imputálni']
-    MFO_NAGYSAG ['Nem kellet imputálni']
-    ARBEV_NAGYSAG ['Nem kellet imputálni']
-    ARBEV_NOVEK ['Medián Imputálva: 68 ']
-    TOKE_ELLAT ['Nem kellet imputálni']
-    FORGO_ESZK_ARANYA ['Nem kellet imputálni']
-    LIKVID_PENZESZK_ARANYA ['Nem kellet imputálni']
-    FORGO_TOKE_ARANY ['Nem kellet imputálni']
-    VEVO_SZALLITO_ARANY ['Medián Imputálva: 2 ']
-
 
 Az így kapott adatbázis tartalmazza a legfontosabb pénzügyi indikátorokat, melyek a modellünk input változóit képzik a továbbiakban. Az adatbázis első 5 rekordjának értékei lentebb láthatóak.
 
 
 ```python
-pd.options.display.float_format = '{:.2f}'.format
-
-database.iloc[:,0:7].head()
+database.head()
 ```
 
 
@@ -1110,6 +968,20 @@ database.iloc[:,0:7].head()
       <th>ARBEV_ARANYOS_EBITDA</th>
       <th>ESZK_ARANYOS_ARBEV</th>
       <th>KESZLET_FORG_SEB</th>
+      <th>VEVO_FORG_SEB</th>
+      <th>LIKVID_RATA</th>
+      <th>LIKVID_GYORSRATA</th>
+      <th>...</th>
+      <th>CASH_FLOW_TART_RATA</th>
+      <th>CASH_FLOW_ARBEV_RATA</th>
+      <th>MFO_NAGYSAG</th>
+      <th>ARBEV_NAGYSAG</th>
+      <th>ARBEV_NOVEK</th>
+      <th>TOKE_ELLAT</th>
+      <th>FORGO_ESZK_ARANYA</th>
+      <th>LIKVID_PENZESZK_ARANYA</th>
+      <th>FORGO_TOKE_ARANY</th>
+      <th>VEVO_SZALLITO_ARANY</th>
     </tr>
   </thead>
   <tbody>
@@ -1122,6 +994,20 @@ database.iloc[:,0:7].head()
       <td>0.10</td>
       <td>0.34</td>
       <td>18.12</td>
+      <td>105.37</td>
+      <td>0.23</td>
+      <td>0.12</td>
+      <td>...</td>
+      <td>0.03</td>
+      <td>0.06</td>
+      <td>11.23</td>
+      <td>9.90</td>
+      <td>0.93</td>
+      <td>2.10</td>
+      <td>0.03</td>
+      <td>0.43</td>
+      <td>-0.10</td>
+      <td>0.00</td>
     </tr>
     <tr>
       <th>1</th>
@@ -1132,6 +1018,20 @@ database.iloc[:,0:7].head()
       <td>0.64</td>
       <td>3.83</td>
       <td>36045.43</td>
+      <td>6.94</td>
+      <td>1.10</td>
+      <td>1.10</td>
+      <td>...</td>
+      <td>3.61</td>
+      <td>0.58</td>
+      <td>10.06</td>
+      <td>11.79</td>
+      <td>1.01</td>
+      <td>0.02</td>
+      <td>0.99</td>
+      <td>0.18</td>
+      <td>0.09</td>
+      <td>0.90</td>
     </tr>
     <tr>
       <th>2</th>
@@ -1142,6 +1042,20 @@ database.iloc[:,0:7].head()
       <td>0.02</td>
       <td>2.74</td>
       <td>30.38</td>
+      <td>3.95</td>
+      <td>1.33</td>
+      <td>1.18</td>
+      <td>...</td>
+      <td>0.07</td>
+      <td>0.02</td>
+      <td>9.69</td>
+      <td>10.67</td>
+      <td>1.13</td>
+      <td>0.93</td>
+      <td>0.80</td>
+      <td>0.04</td>
+      <td>0.20</td>
+      <td>0.98</td>
     </tr>
     <tr>
       <th>3</th>
@@ -1152,6 +1066,20 @@ database.iloc[:,0:7].head()
       <td>0.06</td>
       <td>1.16</td>
       <td>11.77</td>
+      <td>6.10</td>
+      <td>9.13</td>
+      <td>7.85</td>
+      <td>...</td>
+      <td>0.95</td>
+      <td>0.06</td>
+      <td>13.07</td>
+      <td>13.24</td>
+      <td>0.97</td>
+      <td>0.40</td>
+      <td>0.72</td>
+      <td>0.59</td>
+      <td>0.64</td>
+      <td>2.47</td>
     </tr>
     <tr>
       <th>4</th>
@@ -1162,319 +1090,15 @@ database.iloc[:,0:7].head()
       <td>0.22</td>
       <td>1.60</td>
       <td>109.84</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-
-
-
-```python
-database.iloc[:,6:11].head()
-```
-
-
-
-
-<div>
-<table class="dataframe">  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>KESZLET_FORG_SEB</th>
-      <th>VEVO_FORG_SEB</th>
-      <th>LIKVID_RATA</th>
-      <th>LIKVID_GYORSRATA</th>
-      <th>KESZPENZ_LIKVID</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>18.12</td>
-      <td>105.37</td>
-      <td>0.23</td>
-      <td>0.12</td>
-      <td>0.10</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>36045.43</td>
-      <td>6.94</td>
-      <td>1.10</td>
-      <td>1.10</td>
-      <td>0.20</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>30.38</td>
-      <td>3.95</td>
-      <td>1.33</td>
-      <td>1.18</td>
-      <td>0.06</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>11.77</td>
-      <td>6.10</td>
-      <td>9.13</td>
-      <td>7.85</td>
-      <td>5.38</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>109.84</td>
       <td>5.98</td>
       <td>0.57</td>
       <td>0.54</td>
-      <td>0.02</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-
-
-
-```python
-database.iloc[:,11:15].head()
-```
-
-
-
-
-<div>
-<table class="dataframe">  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>DINAMIKUS_LIKVID</th>
-      <th>SAJAT_VAGYON_ARANYA</th>
-      <th>ELADOS_MERTEKE</th>
-      <th>HOSSZU_TAVU_ELADOS</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>0.17</td>
-      <td>0.47</td>
-      <td>0.53</td>
-      <td>0.46</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>4.00</td>
-      <td>0.10</td>
-      <td>0.90</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>0.07</td>
-      <td>0.31</td>
-      <td>0.69</td>
-      <td>0.22</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>0.64</td>
-      <td>0.92</td>
-      <td>0.08</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>0.11</td>
-      <td>0.38</td>
-      <td>0.54</td>
-      <td>0.24</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-
-
-
-```python
-database.iloc[:,15:19].head()
-```
-
-
-
-
-<div>
-<table class="dataframe">  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>IDEGEN_SAJAT_TOKE_ARANY</th>
-      <th>BEFESZK_SAJAT_FIN</th>
-      <th>BEFESZK_IDEGEN_FIN</th>
-      <th>DIN_JOVED_RATA</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>1.13</td>
-      <td>0.48</td>
-      <td>0.41</td>
-      <td>0.02</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>9.44</td>
-      <td>43.73</td>
-      <td>0.00</td>
-      <td>2.21</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>2.24</td>
-      <td>1.54</td>
-      <td>0.44</td>
-      <td>0.05</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>0.09</td>
-      <td>3.48</td>
-      <td>0.00</td>
-      <td>0.07</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>1.44</td>
-      <td>0.65</td>
-      <td>0.21</td>
-      <td>0.35</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-
-
-
-```python
-database.iloc[:,19:24].head()
-```
-
-
-
-
-<div>
-<table class="dataframe">  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>CASH_FLOW_TART_RATA</th>
-      <th>CASH_FLOW_ARBEV_RATA</th>
-      <th>MFO_NAGYSAG</th>
-      <th>ARBEV_NAGYSAG</th>
-      <th>ARBEV_NOVEK</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>0.03</td>
-      <td>0.06</td>
-      <td>11.23</td>
-      <td>9.90</td>
-      <td>0.93</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>3.61</td>
-      <td>0.58</td>
-      <td>10.06</td>
-      <td>11.79</td>
-      <td>1.01</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>0.07</td>
-      <td>0.02</td>
-      <td>9.69</td>
-      <td>10.67</td>
-      <td>1.13</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>0.95</td>
-      <td>0.06</td>
-      <td>13.07</td>
-      <td>13.24</td>
-      <td>0.97</td>
-    </tr>
-    <tr>
-      <th>4</th>
+      <td>...</td>
       <td>0.52</td>
       <td>0.22</td>
       <td>11.34</td>
       <td>11.61</td>
       <td>1.56</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-
-
-
-
-```python
-database.iloc[:,24:].head()
-```
-
-
-
-
-<div>
-<table class="dataframe">  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>TOKE_ELLAT</th>
-      <th>FORGO_ESZK_ARANYA</th>
-      <th>LIKVID_PENZESZK_ARANYA</th>
-      <th>FORGO_TOKE_ARANY</th>
-      <th>VEVO_SZALLITO_ARANY</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>2.10</td>
-      <td>0.03</td>
-      <td>0.43</td>
-      <td>-0.10</td>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>0.02</td>
-      <td>0.99</td>
-      <td>0.18</td>
-      <td>0.09</td>
-      <td>0.90</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>0.93</td>
-      <td>0.80</td>
-      <td>0.04</td>
-      <td>0.20</td>
-      <td>0.98</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>0.40</td>
-      <td>0.72</td>
-      <td>0.59</td>
-      <td>0.64</td>
-      <td>2.47</td>
-    </tr>
-    <tr>
-      <th>4</th>
       <td>1.57</td>
       <td>0.24</td>
       <td>0.03</td>
@@ -1483,6 +1107,7 @@ database.iloc[:,24:].head()
     </tr>
   </tbody>
 </table>
+<p>5 rows × 29 columns</p>
 </div>
 
 
@@ -1530,7 +1155,7 @@ df.plot.bar(rot=0);
 ```
 
 
-![png](Figures/Bankruptcy_84_0.png)
+![png](Bankruptcy_files/Bankruptcy_76_0.png)
 
 
 Látható, hogy a legtöbb csődesemény oka a felszámolási eljárás. Az eseményeket bináris változóvá transzfromálva ki tudjuk egészíteni az adatbázisunkat a fizetőképességet indikáló célváltozóval:
@@ -1538,17 +1163,17 @@ Látható, hogy a legtöbb csődesemény oka a felszámolási eljárás. Az esem
 
 ```python
 binmap = {
-    'A cég csőd eljárás alatt áll': 0,
-    'A cég felszámolási eljárás alatt áll': 0,
-    'A cég kényszertörlési eljárás alatt áll': 0,
-    'Működik': 1
+    'A cég csőd eljárás alatt áll': 1,
+    'A cég felszámolási eljárás alatt áll': 1,
+    'A cég kényszertörlési eljárás alatt áll': 1,
+    'Működik': 0
 }
 
 binlist = [binmap[x] for x in events]
 
-database['FIZETOKEPES'] = binlist
+database['CSOD'] = binlist
 
-database.loc[96:101,["ROA","FIZETOKEPES"]]
+database.loc[96:101,["ROA","CSOD"]]
 ```
 
 
@@ -1559,39 +1184,39 @@ database.loc[96:101,["ROA","FIZETOKEPES"]]
     <tr style="text-align: right;">
       <th></th>
       <th>ROA</th>
-      <th>FIZETOKEPES</th>
+      <th>CSOD</th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th>96</th>
       <td>-0.36</td>
-      <td>1</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>97</th>
       <td>0.03</td>
-      <td>1</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>98</th>
       <td>-0.06</td>
-      <td>1</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>99</th>
       <td>-0.04</td>
-      <td>0</td>
+      <td>1</td>
     </tr>
     <tr>
       <th>100</th>
       <td>0.06</td>
-      <td>1</td>
+      <td>0</td>
     </tr>
     <tr>
       <th>101</th>
       <td>0.01</td>
-      <td>1</td>
+      <td>0</td>
     </tr>
   </tbody>
 </table>
@@ -1627,7 +1252,7 @@ plt.plot(vals);
 ```
 
 
-![png](Figures/Bankruptcy_89_0.png)
+![png](Bankruptcy_files/Bankruptcy_81_0.png)
 
 
 Az árbevételarányos nyereség pédáján jól látszik a csonkolás eredménye. A narancssárga szín jelzi az alsó 5% percentilis csonkolásából keletkezett adatokat. A kiugró értékek eltávolításával egy jóval reprezentatívabb adatsort nyerünk, mely alkalmasabb lesz a későbbiekben modellek készítésére.
