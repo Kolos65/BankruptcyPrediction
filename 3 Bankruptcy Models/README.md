@@ -1,4 +1,3 @@
-Foltányi Kolos
 
 # Csődelőrejelzés Többáltozós Statisztikai Módszerekkel
 A csődelőrejelzés alapvető célja csődvalószínűség, illetve fizetőképességet kifejező score becslése az egyes megfigyelésekhez a magyarázó változók (pénzügyi mutatók) és a csődeseményt kifejező bináris célváltozó felhasználásával.
